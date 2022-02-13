@@ -1,0 +1,18 @@
+---
+- id: java
+  name: Java
+  stackoverflow-tags: [java]
+  year-of-birth: 1993
+  latest-version: 17
+  recent-release-year: 2021
+  github-lang: java
+  scholar-keywords: [java]
+
+- id: cpp
+  name: C++
+  stackoverflow-tags: [cpp]
+  year-of-birth: 1970
+  latest-version: 20
+  recent-release-year: 2021
+  github-lang: cpp
+  scholar-keywords: [c++]
