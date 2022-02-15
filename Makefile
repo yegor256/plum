@@ -39,11 +39,16 @@ $(TARGET)/index.html: $(TARGET)/index.xml main.xsl
 
 $(TARGET)/index.xml: $(XMLS)
 	echo "XMLs: $(XMLS)"
-	printf "<metrics>" > $(TARGET)/index.xml
-	for f in $$(find $(TARGET)/data -name '*.xml'); do
-		cat $${f} >> $(TARGET)/index.xml
-	done
-	printf "</metrics>" >> $(TARGET)/index.xml
+	{
+		printf "<plum><catalog>"
+		ruby -e "require 'yaml'; require 'gyoku'; puts Gyoku.xml(language: YAML.load_file('catalog.yml'));"
+		printf "</catalog>"
+		printf "<metrics>"
+		for f in $$(find $(TARGET)/data -name '*.xml'); do
+			cat $${f}
+		done
+		printf "</metrics></plum>"
+	} > $(TARGET)/index.xml
 
 %.xml:
 	path=$(subst $(TARGET)/data/,,$@)

@@ -23,9 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-  <xsl:template match="m">
-    <xsl:value-of select="v"/>
-  </xsl:template>
   <xsl:template match="metrics">
     <xsl:variable name="root" select="."/>
     <html>
@@ -36,7 +33,7 @@ SOFTWARE.
         <link href='https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css' rel='stylesheet'/>
         <link href='https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css' rel='stylesheet'/>
         <style>
-          td, th { text-align: right; }
+          td, th { text-align: right; font-family: monospace; }
           .left { border-bottom: 0; }
         </style>
       </head>
@@ -54,10 +51,22 @@ SOFTWARE.
           </thead>
           <tbody>
             <xsl:for-each-group select="$root/m" group-by="@lang">
-              <xsl:variable name="lang" select="current-group()[1]/@lang"/>
+              <xsl:variable name="lang" select="/plum/catalog/language[id=current-grouping-key()]"/>
               <tr>
                 <th class="left">
-                  <xsl:value-of select="$lang"/>
+                  <a>
+                    <xsl:attribute name="href">
+                      <xsl:choose>
+                        <xsl:when test="$lang/home">
+                          <xsl:value-of select="$lang/home"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:value-of select="$lang/wikipedia"/>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </xsl:attribute>
+                    <xsl:value-of select="$lang/name"/>
+                  </a>
                 </th>
                 <xsl:for-each select="current-group()">
                   <xsl:variable name="script" select="@script"/>
@@ -69,6 +78,24 @@ SOFTWARE.
             </xsl:for-each-group>
           </tbody>
         </table>
+      </body>
+    </html>
+  </xsl:template>
+  <xsl:template match="plum">
+    <html>
+      <head>
+        <title>PLUM</title>
+        <meta charset='UTF-8'/>
+        <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+        <link href='https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css' rel='stylesheet'/>
+        <link href='https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css' rel='stylesheet'/>
+        <style>
+          td, th { text-align: right; font-family: monospace; }
+          .left { border-bottom: 0; }
+        </style>
+      </head>
+      <body>
+        <xsl:apply-templates select="metrics" />
       </body>
     </html>
   </xsl:template>

@@ -2,17 +2,30 @@
 - id: java
   name: Java
   stackoverflow-tags: [java]
-  year-of-birth: 1993
+  year-of-birth: 1995
   latest-version: 17
   recent-release-year: 2021
   github-lang: java
   scholar-keywords: [java]
+  home: https://www.java.com/
+  wikipedia: https://en.wikipedia.org/wiki/Java_(programming_language)
 
 - id: cpp
   name: C++
   stackoverflow-tags: [cpp]
-  year-of-birth: 1970
+  year-of-birth: 1985
   latest-version: 20
-  recent-release-year: 2021
+  recent-release-year: 2020
   github-lang: cpp
   scholar-keywords: [c++]
+  wikipedia: https://en.wikipedia.org/wiki/C++
+
+- id: python
+  name: Python
+  stackoverflow-tags: [python]
+  year-of-birth: 1991
+  latest-version: 3.10
+  recent-release-year: 2022
+  github-lang: python
+  scholar-keywords: [python]
+  wikipedia: https://en.wikipedia.org/wiki/Python_(programming_language)
