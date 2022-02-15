@@ -26,22 +26,40 @@
 
 SHELL = bash
 TARGET = target
+SAXON="/usr/local/opt/Saxon.jar"
 METRICS = $(notdir $(wildcard metrics/*))
 LANGS := $(shell yq '.[].id' catalog.yml)
-XMLS = $(foreach lang,$(addprefix $(TARGET)/,$(LANGS)),$(foreach metric,$(METRICS),$(lang)/$(metric).xml))
+XMLS = $(foreach lang,$(addprefix $(TARGET)/data/,$(LANGS)),$(foreach metric,$(METRICS),$(lang)/$(metric).xml))
 
-all: $(XMLS)
+all: $(TARGET)/index.html
 	echo "Languages: $(LANGS)"
-	echo "Metrics: $(METRICS)"
+
+$(TARGET)/index.html: $(TARGET)/index.xml main.xsl
+	java -jar $(SAXON) "-s:$(TARGET)/index.xml" -xsl:main.xsl "-o:$(TARGET)/index.html"
+
+$(TARGET)/index.xml: $(XMLS)
+	echo "XMLs: $(XMLS)"
+	printf "<metrics>" > $(TARGET)/index.xml
+	for f in $$(find $(TARGET)/data -name '*.xml'); do
+		cat $${f} >> $(TARGET)/index.xml
+	done
+	printf "</metrics>" >> $(TARGET)/index.xml
 
 %.xml:
-	path=$(subst $(TARGET)/,,$@)
-	metric=$$(echo $${path} | cut -d/ -f2 | cut -d. -f1)
-	lang=$$(echo $${path} | cut -d/ -f1)
-	script="metrics/$$(echo $${path} | cut -d/ -f2 | sed 's/.xml//')"
-	mkdir -p $$(dirname "$@")
-	"$${script}" --language "$${lang}" > $@
+	path=$(subst $(TARGET)/data/,,$@)
+	metric=$$(echo "$${path}" | cut -d/ -f2 | cut -d. -f1)
+	lang=$$(echo "$${path}" | cut -d/ -f1)
+	script="metrics/$$(echo "$${path}" | cut -d/ -f2 | sed 's/\.xml//')"
+	mkdir -p "$$(dirname "$@")"
+	{
+		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
+		"$${script}" --language "$${lang}"
+		printf "</m>"
+	} > $@
+
+$(TARGET):
+	mkdir -p $@
 
 clean:
-	rm -rf "$(TARGET)"
+	rm -rf $(TARGET)
 
