@@ -10,3 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: yegor256/plum@master
+      - run: mkdir gh-pages
+      - run: cp target/index.html gh-pages
+      - uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: gh-pages
+          clean: false
