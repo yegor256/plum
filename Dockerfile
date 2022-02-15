@@ -27,5 +27,6 @@ RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/lat
 
 RUN gem install yaml octokit slop yaml gyoku
 
-RUN wget --no-verbose -O /usr/local/opt/Saxon.jar \
+RUN mkdir -p /usr/local/opt && \
+    wget --no-verbose -O /usr/local/opt/Saxon.jar \
     https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-5/Saxon-HE-9.8.0-5.jar
