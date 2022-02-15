@@ -25,8 +25,7 @@ FROM yegor256/rultor-image:1.6.0
 RUN apt-get update -y
 RUN apt-get install -y yq
 
-RUN gem install gyoku
-RUN gem install yaml
+RUN gem install yaml octokit slop yaml gyoku
 
 RUN wget --no-verbose -O /usr/local/opt/Saxon.jar \
     https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-5/Saxon-HE-9.8.0-5.jar

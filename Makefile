@@ -58,7 +58,7 @@ $(TARGET)/index.xml: $(XMLS)
 	mkdir -p "$$(dirname "$@")"
 	{
 		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
-		"$${script}" --language "$${lang}"
+		"$${script}" --id "$${lang}"
 		printf "</m>"
 	} > $@
 

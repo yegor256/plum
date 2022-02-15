@@ -25,15 +25,18 @@ STDOUT.sync = true
 
 require 'slop'
 require 'octokit'
+require 'yaml'
 
 opts = Slop.parse do |o|
   o.string '--token', 'GitHub access token', default: ''
-  o.string '--language', 'Language tag in GitHub', required: true
+  o.string '--id', 'Language ID in the catalog', required: true
   o.on '--help' do
     puts o
     exit
   end
 end
+
+cat = YAML.load_file('catalog.yml').find { |c| c['id'] == opts[:id] }
 
 github = Octokit::Client.new
 unless opts[:token].empty?
@@ -42,7 +45,7 @@ unless opts[:token].empty?
 end
 json = github.search_issues(
   [
-    "language:#{opts[:language]}",
+    "language:#{cat['github-lang']}",
   ].join(' '),
   per_page: 1,
   page: 0
