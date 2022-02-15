@@ -22,8 +22,8 @@
 
 FROM yegor256/rultor-image:1.6.0
 
-RUN apt-get update -y
-RUN apt-get install -y yq
+RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
+    chmod a+x /usr/local/bin/yq
 
 RUN gem install yaml octokit slop yaml gyoku
 
