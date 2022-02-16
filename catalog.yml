@@ -95,3 +95,25 @@ csharp:
   home: https://developer.mozilla.org/en-US/docs/Web/JavaScript
   wikipedia: https://en.wikipedia.org/wiki/JavaScript
 
+groovy:
+  name: Groovy
+  stackoverflow-tag: groovy
+  year-of-birth: 2003
+  latest-version: 4.0.0
+  recent-release-year: 2022
+  github-lang: groovy
+  scholar-keyword: groovy programming language
+  home: https://groovy-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Apache_Groovy
+
+fortran:
+  name: Fortran
+  stackoverflow-tag: groovy
+  year-of-birth: 1957
+  latest-version: 2018
+  recent-release-year: 2018
+  github-lang: fortran
+  scholar-keyword: fortran programming language
+  home: https://fortran-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Fortran
+

@@ -29,6 +29,9 @@ SOFTWARE.
       <thead>
         <tr>
           <th/>
+          <th>
+            <xsl:text>DOB</xsl:text>
+          </th>
           <xsl:for-each-group select="$root/m" group-by="@script">
             <xsl:variable name="script" select="@script"/>
             <th class="sorter">
@@ -57,6 +60,9 @@ SOFTWARE.
                 <xsl:value-of select="$lang/name"/>
               </a>
             </th>
+            <td>
+              <xsl:value-of select="$lang/year-of-birth"/>
+            </td>
             <xsl:for-each select="current-group()">
               <xsl:variable name="script" select="@script"/>
               <td>
