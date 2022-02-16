@@ -20,52 +20,57 @@
           td, th { text-align: right; font-family: monospace; font-size: 18px; }
           .left { border-bottom: 0; }
           footer { text-align: center; font-size: 0.8em; }
-        </style></head>
+          .sorter { cursor: pointer; }
+        </style><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script><script type="text/javascript">
+          $(function() {
+            $("#languages").tablesorter();
+          });
+        </script></head>
          <body>
-            <table>
+            <table id="languages">
                <thead>
                   <tr>
                      <th></th>
-                     <th>so-questions</th>
-                     <th>github-pulls</th>
-                     <th>github-repos</th>
-                     <th>scholar-citations</th>
+                     <th class="sorter">⇅ so-questions</th>
+                     <th class="sorter">⇅ github-pulls</th>
+                     <th class="sorter">⇅ github-repos</th>
+                     <th class="sorter">⇅ scholar-citations</th>
                   </tr>
                </thead>
                <tbody>
                   <tr>
                      <th class="left"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></th>
-                     <td>1891024</td>
-                     <td>26370372</td>
-                     <td>8034491</td>
+                     <td>1891025</td>
+                     <td>26370482</td>
+                     <td>8497952</td>
                      <td>1630000</td>
                   </tr>
                   <tr>
                      <th class="left"><a href="https://www.ruby-lang.org/">Ruby</a></th>
                      <td>222864</td>
-                     <td>2403155</td>
-                     <td>292664</td>
+                     <td>2403168</td>
+                     <td>292666</td>
                      <td>1450000</td>
                   </tr>
                   <tr>
                      <th class="left"><a href="https://en.wikipedia.org/wiki/C++">C++</a></th>
-                     <td>754697</td>
-                     <td>10170117</td>
-                     <td>2944424</td>
+                     <td>754699</td>
+                     <td>10170141</td>
+                     <td>2955296</td>
                      <td>217000</td>
                   </tr>
                   <tr>
                      <th class="left"><a href="https://www.rust-lang.org">Rust</a></th>
                      <td>26573</td>
-                     <td>2403155</td>
-                     <td>292664</td>
+                     <td>2403168</td>
+                     <td>292666</td>
                      <td>1450000</td>
                   </tr>
                   <tr>
                      <th class="left"><a href="https://www.java.com/">Java</a></th>
-                     <td>1827822</td>
-                     <td>23003643</td>
-                     <td>10804741</td>
+                     <td>1827823</td>
+                     <td>23003720</td>
+                     <td>10495998</td>
                      <td>3290000</td>
                   </tr>
                </tbody>
