@@ -32,10 +32,7 @@ token = ENV['GH_TOKEN']
 cat = YAML.load_file('catalog.yml').find { |c| c['id'] == lang }
 
 github = Octokit::Client.new
-unless token.nil?
-  github = Octokit::Client.new(access_token: token)
-  puts 'Accessing GitHub with personal access token!'
-end
+github = Octokit::Client.new(access_token: token) unless token.nil?
 json = github.search_issues(
   [
     "language:#{cat['github-lang']}",

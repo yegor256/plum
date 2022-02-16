@@ -58,7 +58,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	mkdir -p "$$(dirname "$@")"
 	{
 		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
-		"$${script}" "$${lang}"
+		GH_TOKEN=$(GH_TOKEN) "$${script}" "$${lang}"
 		printf "</m>"
 	} > $@
 
