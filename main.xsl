@@ -33,8 +33,9 @@ SOFTWARE.
         <link href='https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css' rel='stylesheet'/>
         <link href='https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css' rel='stylesheet'/>
         <style>
-          td, th { text-align: right; font-family: monospace; }
+          td, th { text-align: right; font-family: monospace; font-size: 18px; }
           .left { border-bottom: 0; }
+          footer { text-align: center; font-size: 0.8em; }
         </style>
       </head>
       <body>
@@ -96,6 +97,16 @@ SOFTWARE.
       </head>
       <body>
         <xsl:apply-templates select="metrics" />
+        <footer>
+          <p>
+            <xsl:text>Built on </xsl:text>
+            <xsl:value-of select="@date"/>
+            <xsl:text> by </xsl:text>
+            <a href="https://github.com/yegor256/plum">
+              <xsl:text>yegor256/plum</xsl:text>
+            </a>
+          </p>
+        </footer>
       </body>
     </html>
   </xsl:template>

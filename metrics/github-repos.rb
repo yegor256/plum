@@ -23,24 +23,17 @@
 
 STDOUT.sync = true
 
-require 'slop'
 require 'octokit'
 require 'yaml'
 
-opts = Slop.parse do |o|
-  o.string '--token', 'GitHub access token', default: ''
-  o.string '--id', 'Language ID in the catalog', required: true
-  o.on '--help' do
-    puts o
-    exit
-  end
-end
+lang = ARGV[0]
+token = ENV['GH_TOKEN']
 
-cat = YAML.load_file('catalog.yml').find { |c| c['id'] == opts[:id] }
+cat = YAML.load_file('catalog.yml').find { |c| c['id'] == lang }
 
 github = Octokit::Client.new
-unless opts[:token].empty?
-  github = Octokit::Client.new(access_token: opts[:token])
+unless token.nil?
+  github = Octokit::Client.new(access_token: token)
   puts 'Accessing GitHub with personal access token!'
 end
 json = github.search_repositories(

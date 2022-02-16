@@ -37,10 +37,10 @@ all: $(TARGET)/index.html
 $(TARGET)/index.html: $(TARGET)/index.xml main.xsl
 	java -jar $(SAXON) "-s:$(TARGET)/index.xml" -xsl:main.xsl "-o:$(TARGET)/index.html"
 
-$(TARGET)/index.xml: $(XMLS)
+$(TARGET)/index.xml: $(XMLS) Makefile
 	echo "XMLs: $(XMLS)"
 	{
-		printf "<plum><catalog>"
+		printf "<plum date='$$(date +"%Y-%m-%d")'><catalog>"
 		ruby -e "require 'yaml'; require 'gyoku'; puts Gyoku.xml(language: YAML.load_file('catalog.yml'));"
 		printf "</catalog>"
 		printf "<metrics>"
@@ -58,7 +58,7 @@ $(TARGET)/index.xml: $(XMLS)
 	mkdir -p "$$(dirname "$@")"
 	{
 		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
-		"$${script}" --id "$${lang}"
+		"$${script}" "$${lang}"
 		printf "</m>"
 	} > $@
 

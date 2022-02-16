@@ -2,7 +2,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ctors-vs-size/blob/master/LICENSE.txt)
 
 Here we automatically collect statistics for some programming
-languages (well, for most of them).
+languages (well, for most of them). 
+It's published: [/index.html](https://yegor256.github.io/plum/).
 
 To make it locally, run:
 
