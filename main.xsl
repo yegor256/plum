@@ -36,15 +36,24 @@ SOFTWARE.
           td, th { text-align: right; font-family: monospace; font-size: 18px; }
           .left { border-bottom: 0; }
           footer { text-align: center; font-size: 0.8em; }
+          .sorter { cursor: pointer; }
         </style>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"/>
+        <script type="text/javascript">
+          $(function() {
+            $("#languages").tablesorter();
+          });
+        </script>
       </head>
       <body>
-        <table>
+        <table id="languages">
           <thead>
             <tr>
               <th/>
               <xsl:for-each-group select="$root/m" group-by="@script">
-                <th>
+                <th class="sorter">
+                  <xsl:text>⇅ </xsl:text>
                   <xsl:value-of select="@script"/>
                 </th>
               </xsl:for-each-group>
