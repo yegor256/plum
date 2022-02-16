@@ -4,8 +4,10 @@
 Here we automatically collect statistics for some programming
 languages (well, for most of them). 
 It's published: [/index.html](https://yegor256.github.io/plum/).
+If you want to add a new language to the collection, feel free
+to submit a pull request, changing [`catalog.yml`](https://github.com/yegor256/plum/blob/master/catalog.yml) file.
 
-To make it locally, run:
+To make it locally, just run:
 
 ```bash
 $ make
