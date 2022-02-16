@@ -52,7 +52,7 @@ SOFTWARE.
           </thead>
           <tbody>
             <xsl:for-each-group select="$root/m" group-by="@lang">
-              <xsl:variable name="lang" select="/plum/catalog/language[id=current-grouping-key()]"/>
+              <xsl:variable name="lang" select="/plum/catalog/*[name()=current-grouping-key()]"/>
               <tr>
                 <th class="left">
                   <a>

@@ -29,7 +29,7 @@ require 'yaml'
 lang = ARGV[0]
 token = ENV['GH_TOKEN']
 
-cat = YAML.load_file('catalog.yml').find { |c| c['id'] == lang }
+cat = YAML.load_file('catalog.yml')[lang]
 
 github = Octokit::Client.new
 github = Octokit::Client.new(access_token: token) unless token.nil?

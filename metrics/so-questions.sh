@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/bin/bash
 # The MIT License (MIT)
 #
 # Copyright (c) 2021 Yegor Bugayenko
@@ -21,24 +21,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-STDOUT.sync = true
+lang=$1
 
-require 'octokit'
-require 'yaml'
+tag=$(cat catalog.yml | yq ".${lang}.stackoverflow-tags[0]")
 
-lang = ARGV[0]
-token = ENV['GH_TOKEN']
+count=$(curl -s "https://api.stackexchange.com/2.2/tags/${tag}/info?site=stackoverflow" | gunzip | jq '.items[0].count')
 
-cat = YAML.load_file('catalog.yml')[lang]
-
-github = Octokit::Client.new
-github = Octokit::Client.new(access_token: token) unless token.nil?
-json = github.search_issues(
-  [
-    "language:#{cat['github-lang']}",
-  ].join(' '),
-  per_page: 1,
-  page: 0
-)
-
-puts "<v>#{json[:total_count]}</v>"
+echo "<v>${count}</v>"

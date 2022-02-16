@@ -25,7 +25,7 @@ FROM yegor256/rultor-image:1.6.0
 RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
     chmod a+x /usr/local/bin/yq
 
-RUN gem install yaml octokit gyoku
+RUN gem install yaml octokit gyoku jq
 
 RUN mkdir -p /usr/local/opt && \
     wget --no-verbose -O /usr/local/opt/Saxon.jar \

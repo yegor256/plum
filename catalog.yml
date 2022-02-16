@@ -1,5 +1,5 @@
 ---
-- id: java
+java:
   name: Java
   stackoverflow-tags: [java]
   year-of-birth: 1995
@@ -10,7 +10,7 @@
   home: https://www.java.com/
   wikipedia: https://en.wikipedia.org/wiki/Java_(programming_language)
 
-- id: cpp
+cpp:
   name: C++
   stackoverflow-tags: [cpp]
   year-of-birth: 1985
@@ -20,7 +20,7 @@
   scholar-keywords: [c++]
   wikipedia: https://en.wikipedia.org/wiki/C++
 
-- id: python
+python:
   name: Python
   stackoverflow-tags: [python]
   year-of-birth: 1991

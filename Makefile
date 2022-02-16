@@ -28,7 +28,7 @@ SHELL = bash
 TARGET = target
 SAXON="/usr/local/opt/Saxon.jar"
 METRICS = $(notdir $(wildcard metrics/*))
-LANGS := $(shell yq '.[].id' catalog.yml)
+LANGS := $(shell cat catalog.yml | yq 'keys' | cut -f2 -d' ')
 XMLS = $(foreach lang,$(addprefix $(TARGET)/data/,$(LANGS)),$(foreach metric,$(METRICS),$(lang)/$(metric).xml))
 
 all: $(TARGET)/index.html
@@ -41,7 +41,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	echo "XMLs: $(XMLS)"
 	{
 		printf "<plum date='$$(date +"%Y-%m-%d")'><catalog>"
-		ruby -e "require 'yaml'; require 'gyoku'; puts Gyoku.xml(language: YAML.load_file('catalog.yml'));"
+		ruby -e "require 'yaml'; require 'gyoku'; puts Gyoku.xml(YAML.load_file('catalog.yml'));"
 		printf "</catalog>"
 		printf "<metrics>"
 		for f in $$(find $(TARGET)/data -name '*.xml'); do
@@ -56,9 +56,10 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	lang=$$(echo "$${path}" | cut -d/ -f1)
 	script="metrics/$$(echo "$${path}" | cut -d/ -f2 | sed 's/\.xml//')"
 	mkdir -p "$$(dirname "$@")"
+	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
 	{
 		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
-		GH_TOKEN=$(GH_TOKEN) "$${script}" "$${lang}"
+		"$${script}" "$${lang}"
 		printf "</m>"
 	} > $@
 
