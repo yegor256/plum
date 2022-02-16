@@ -24,7 +24,7 @@
 lang=$1
 
 if [ ! "$lang" ]; then
-    echo "Number of Stack Overflow Questions"
+    echo "Stack Overflow Questions"
     exit
 fi
 

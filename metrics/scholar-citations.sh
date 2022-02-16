@@ -26,7 +26,7 @@ set -e
 lang=$1
 
 if [ ! "$lang" ]; then
-    echo "Number of Mentions in Google Scholar"
+    echo "Mentions in Google Scholar"
     exit
 fi
 

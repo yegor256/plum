@@ -117,3 +117,22 @@ fortran:
   home: https://fortran-lang.org
   wikipedia: https://en.wikipedia.org/wiki/Fortran
 
+cobol:
+  name: COBOL
+  stackoverflow-tag: cobol
+  year-of-birth: 1959
+  latest-version: 2014
+  recent-release-year: 2014
+  github-lang: cobol
+  scholar-keyword: cobol programming language
+  wikipedia: https://en.wikipedia.org/wiki/COBOL
+
+eiffel:
+  name: Eiffel
+  stackoverflow-tag: eiffel
+  year-of-birth: 1986
+  latest-version: 20.11
+  recent-release-year: 2020
+  github-lang: eiffel
+  scholar-keyword: eiffel programming language
+  wikipedia: https://www.eiffel.org

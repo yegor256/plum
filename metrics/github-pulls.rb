@@ -30,7 +30,7 @@ lang = ARGV[0]
 token = ENV['GH_TOKEN']
 
 if lang.nil?
-    puts "Number of GitHub Pull Requests"
+    puts "GitHub Pull Requests"
     exit
 end
 
