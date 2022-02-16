@@ -24,8 +24,6 @@ java:
   name: Java
   stackoverflow-tag: java
   year-of-birth: 1995
-  latest-version: 17
-  recent-release-year: 2021
   github-lang: java
   scholar-keyword: java programming language
   home: https://www.java.com/
@@ -35,8 +33,6 @@ cpp:
   name: C++
   stackoverflow-tag: cpp
   year-of-birth: 1985
-  latest-version: 20
-  recent-release-year: 2020
   github-lang: cpp
   scholar-keyword: c++ programming language
   wikipedia: https://en.wikipedia.org/wiki/C++
@@ -45,8 +41,6 @@ python:
   name: Python
   stackoverflow-tag: python
   year-of-birth: 1991
-  latest-version: 3.10
-  recent-release-year: 2022
   github-lang: python
   scholar-keyword: python programming language
   wikipedia: https://en.wikipedia.org/wiki/Python_(programming_language)
@@ -55,8 +49,6 @@ rust:
   name: Rust
   stackoverflow-tag: rust
   year-of-birth: 2010
-  latest-version: 1.58
-  recent-release-year: 2022
   github-lang: rust
   scholar-keyword: rust programming language
   home: https://www.rust-lang.org
@@ -66,8 +58,6 @@ ruby:
   name: Ruby
   stackoverflow-tag: ruby
   year-of-birth: 1995
-  latest-version: 3.1
-  recent-release-year: 2021
   github-lang: rust
   scholar-keyword: rust programming language
   home: https://www.ruby-lang.org/
@@ -77,8 +67,6 @@ javascript:
   name: JavaScript
   stackoverflow-tag: javascript
   year-of-birth: 1995
-  latest-version: 2021
-  recent-release-year: 2021
   github-lang: javascript
   scholar-keyword: javascript
   home: https://developer.mozilla.org/en-US/docs/Web/JavaScript
@@ -88,8 +76,6 @@ csharp:
   name: C#
   stackoverflow-tag: c#
   year-of-birth: 2000
-  latest-version: 10.0
-  recent-release-year: 2021
   github-lang: csharp
   scholar-keyword: C# programming language
   home: https://developer.mozilla.org/en-US/docs/Web/JavaScript
@@ -99,8 +85,6 @@ groovy:
   name: Groovy
   stackoverflow-tag: groovy
   year-of-birth: 2003
-  latest-version: 4.0.0
-  recent-release-year: 2022
   github-lang: groovy
   scholar-keyword: groovy programming language
   home: https://groovy-lang.org
@@ -110,8 +94,6 @@ fortran:
   name: Fortran
   stackoverflow-tag: groovy
   year-of-birth: 1957
-  latest-version: 2018
-  recent-release-year: 2018
   github-lang: fortran
   scholar-keyword: fortran programming language
   home: https://fortran-lang.org
@@ -121,8 +103,6 @@ cobol:
   name: COBOL
   stackoverflow-tag: cobol
   year-of-birth: 1959
-  latest-version: 2014
-  recent-release-year: 2014
   github-lang: cobol
   scholar-keyword: cobol programming language
   wikipedia: https://en.wikipedia.org/wiki/COBOL
@@ -131,8 +111,6 @@ eiffel:
   name: Eiffel
   stackoverflow-tag: eiffel
   year-of-birth: 1986
-  latest-version: 20.11
-  recent-release-year: 2020
   github-lang: eiffel
   scholar-keyword: eiffel programming language
   wikipedia: https://www.eiffel.org
@@ -141,8 +119,6 @@ php:
   name: PHP
   stackoverflow-tag: php
   year-of-birth: 1995
-  latest-version: 8.1.2
-  recent-release-year: 2022
   github-lang: php
   scholar-keyword: php programming language
   wikipedia: https://en.wikipedia.org/wiki/PHP
@@ -151,8 +127,6 @@ go:
   name: Go
   stackoverflow-tag: go
   year-of-birth: 1995
-  latest-version: 1.17.7
-  recent-release-year: 2022
   github-lang: go
   scholar-keyword: go programming language
   home: https://go.dev
@@ -162,8 +136,6 @@ haskell:
   name: Haskell
   stackoverflow-tag: haskell
   year-of-birth: 1990
-  latest-version: 2010
-  recent-release-year: 2020
   github-lang: haskell
   scholar-keyword: haskell programming language
   home: https://www.haskell.org
@@ -173,10 +145,35 @@ scala:
   name: Scala
   stackoverflow-tag: scala
   year-of-birth: 2004
-  latest-version: 3.1.0
-  recent-release-year: 2021
   github-lang: scala
   scholar-keyword: scala programming language
   home: https://www.scala-lang.org
   wikipedia: https://en.wikipedia.org/wiki/Scala_(programming_language)
+
+lua:
+  name: Lua
+  stackoverflow-tag: lua
+  year-of-birth: 1993
+  github-lang: lua
+  scholar-keyword: lua programming language
+  home: https://www.lua.org
+  wikipedia: https://en.wikipedia.org/wiki/Lua_(programming_language)
+
+perl:
+  name: Perl
+  stackoverflow-tag: perl
+  year-of-birth: 1988
+  github-lang: perl
+  scholar-keyword: perl programming language
+  home: https://www.perl.org
+  wikipedia: https://en.wikipedia.org/wiki/Perl
+
+ada:
+  name: Ada
+  stackoverflow-tag: ada
+  year-of-birth: 1980
+  github-lang: ada
+  scholar-keyword: ada programming language
+  home: https://www.adaic.org
+  wikipedia: https://en.wikipedia.org/wiki/Ada_(programming_language)
 
