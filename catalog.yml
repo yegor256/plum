@@ -177,3 +177,64 @@ ada:
   home: https://www.adaic.org
   wikipedia: https://en.wikipedia.org/wiki/Ada_(programming_language)
 
+ocaml:
+  name: OCaml
+  stackoverflow-tag: ocaml
+  year-of-birth: 1996
+  github-lang: ocaml
+  scholar-keyword: OCaml programming language
+  home: https://ocaml.org
+  wikipedia: https://en.wikipedia.org/wiki/OCaml
+
+sql:
+  name: SQL
+  stackoverflow-tag: sql
+  year-of-birth: 1974
+  github-lang: sql
+  scholar-keyword: sql programming language
+  wikipedia: https://en.wikipedia.org/wiki/SQL
+
+bash:
+  name: Bash
+  stackoverflow-tag: bash
+  year-of-birth: 1989
+  github-lang: bash
+  scholar-keyword: bash programming language
+  home: https://www.gnu.org/software/bash/
+  wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+
+elixir:
+  name: Elixir
+  stackoverflow-tag: elixir
+  year-of-birth: 2012
+  github-lang: elixir
+  scholar-keyword: elixir programming language
+  home: https://elixir-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Elixir_(programming_language)
+
+swift:
+  name: Swift
+  stackoverflow-tag: swift
+  year-of-birth: 2014
+  github-lang: swift
+  scholar-keyword: swift programming language
+  home: https://www.swift.org
+  wikipedia: https://en.wikipedia.org/wiki/Swift_(programming_language)
+
+vba:
+  name: VBA
+  stackoverflow-tag: vba
+  year-of-birth: 1993
+  github-lang: vba
+  scholar-keyword: vba programming language
+  wikipedia: https://en.wikipedia.org/wiki/Visual_Basic_for_Applications
+
+kotlin:
+  name: Kotlin
+  stackoverflow-tag: kotlin
+  year-of-birth: 2011
+  github-lang: kotlin
+  scholar-keyword: kotlin programming language
+  home: https://kotlinlang.org
+  wikipedia: https://en.wikipedia.org/wiki/Kotlin_(programming_language)
+
