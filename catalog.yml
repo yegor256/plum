@@ -1,31 +1,31 @@
 ---
 java:
   name: Java
-  stackoverflow-tags: [java]
+  stackoverflow-tag: java
   year-of-birth: 1995
   latest-version: 17
   recent-release-year: 2021
   github-lang: java
-  scholar-keywords: [java]
+  scholar-keyword: java programming language
   home: https://www.java.com/
   wikipedia: https://en.wikipedia.org/wiki/Java_(programming_language)
 
 cpp:
   name: C++
-  stackoverflow-tags: [cpp]
+  stackoverflow-tag: cpp
   year-of-birth: 1985
   latest-version: 20
   recent-release-year: 2020
   github-lang: cpp
-  scholar-keywords: [c++]
+  scholar-keyword: c++ programming language
   wikipedia: https://en.wikipedia.org/wiki/C++
 
 python:
   name: Python
-  stackoverflow-tags: [python]
+  stackoverflow-tag: python
   year-of-birth: 1991
   latest-version: 3.10
   recent-release-year: 2022
   github-lang: python
-  scholar-keywords: [python]
+  scholar-keyword: python programming language
   wikipedia: https://en.wikipedia.org/wiki/Python_(programming_language)

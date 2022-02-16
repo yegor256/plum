@@ -57,6 +57,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	script="metrics/$$(echo "$${path}" | cut -d/ -f2 | sed 's/\.xml//')"
 	mkdir -p "$$(dirname "$@")"
 	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
+	if [ "$(SERPAPI_KEY)" ]; then export SERPAPI_KEY=$(SERPAPI_KEY); fi
 	{
 		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
 		"$${script}" "$${lang}"

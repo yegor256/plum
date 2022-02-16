@@ -21,10 +21,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+set -e
+
 lang=$1
 
-tag=$(cat catalog.yml | yq ".${lang}.stackoverflow-tag")
+keyword=$(cat catalog.yml | yq ".${lang}.scholar-keyword")
 
-count=$(curl -s "https://api.stackexchange.com/2.2/tags/${tag}/info?site=stackoverflow" | gunzip | jq '.items[0].count')
+count=$(curl -s "https://serpapi.com/search.json?engine=google_scholar&q=$(printf ${keyword} | jq -sRr @uri)&api_key=${SERPAPI_KEY}" | jq '.search_information.total_results')
 
 echo "<v>${count}</v>"
