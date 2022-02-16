@@ -43,6 +43,13 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 		printf "<plum date='$$(date +"%Y-%m-%d")'><catalog>"
 		ruby -e "require 'yaml'; require 'gyoku'; puts Gyoku.xml(YAML.load_file('catalog.yml'));"
 		printf "</catalog>"
+		printf "<scripts>"
+		for m in $(METRICS); do
+			printf "<script id='$$(echo $${m} | cut -d. -f1)'>"
+			"./metrics/$${m}"
+			printf "</script>"
+		done
+		printf "</scripts>"
 		printf "<metrics>"
 		for f in $$(find $(TARGET)/data -name '*.xml'); do
 			cat $${f}
@@ -63,6 +70,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 		"$${script}" "$${lang}"
 		printf "</m>"
 	} > $@
+	sleep 1
 
 $(TARGET):
 	mkdir -p $@

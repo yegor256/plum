@@ -25,6 +25,11 @@ set -e
 
 lang=$1
 
+if [ ! "$lang" ]; then
+    echo "Number of Mentions in Google Scholar"
+    exit
+fi
+
 keyword=$(cat catalog.yml | yq ".${lang}.scholar-keyword")
 
 count=$(curl -s "https://serpapi.com/search.json?engine=google_scholar&q=$(printf ${keyword} | jq -sRr @uri)&api_key=${SERPAPI_KEY}" | jq '.search_information.total_results')

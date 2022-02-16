@@ -25,6 +25,50 @@ SOFTWARE.
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
   <xsl:template match="metrics">
     <xsl:variable name="root" select="."/>
+    <table id="languages">
+      <thead>
+        <tr>
+          <th/>
+          <xsl:for-each-group select="$root/m" group-by="@script">
+            <xsl:variable name="script" select="@script"/>
+            <th class="sorter">
+              <xsl:text>⇅ </xsl:text>
+              <xsl:value-of select="/plum/scripts/script[@id=$script]"/>
+            </th>
+          </xsl:for-each-group>
+        </tr>
+      </thead>
+      <tbody>
+        <xsl:for-each-group select="$root/m" group-by="@lang">
+          <xsl:variable name="lang" select="/plum/catalog/*[name()=current-grouping-key()]"/>
+          <tr>
+            <th class="left">
+              <a>
+                <xsl:attribute name="href">
+                  <xsl:choose>
+                    <xsl:when test="$lang/home">
+                      <xsl:value-of select="$lang/home"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$lang/wikipedia"/>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:attribute>
+                <xsl:value-of select="$lang/name"/>
+              </a>
+            </th>
+            <xsl:for-each select="current-group()">
+              <xsl:variable name="script" select="@script"/>
+              <td>
+                <xsl:value-of select="v"/>
+              </td>
+            </xsl:for-each>
+          </tr>
+        </xsl:for-each-group>
+      </tbody>
+    </table>
+  </xsl:template>
+  <xsl:template match="plum">
     <html>
       <head>
         <title>PLUM</title>
@@ -35,6 +79,7 @@ SOFTWARE.
         <style>
           td, th { text-align: right; font-family: monospace; font-size: 18px; }
           .left { border-bottom: 0; }
+          header { text-align: center; }
           footer { text-align: center; font-size: 0.8em; }
           .sorter { cursor: pointer; }
         </style>
@@ -47,72 +92,26 @@ SOFTWARE.
         </script>
       </head>
       <body>
-        <table id="languages">
-          <thead>
-            <tr>
-              <th/>
-              <xsl:for-each-group select="$root/m" group-by="@script">
-                <th class="sorter">
-                  <xsl:text>⇅ </xsl:text>
-                  <xsl:value-of select="@script"/>
-                </th>
-              </xsl:for-each-group>
-            </tr>
-          </thead>
-          <tbody>
-            <xsl:for-each-group select="$root/m" group-by="@lang">
-              <xsl:variable name="lang" select="/plum/catalog/*[name()=current-grouping-key()]"/>
-              <tr>
-                <th class="left">
-                  <a>
-                    <xsl:attribute name="href">
-                      <xsl:choose>
-                        <xsl:when test="$lang/home">
-                          <xsl:value-of select="$lang/home"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <xsl:value-of select="$lang/wikipedia"/>
-                        </xsl:otherwise>
-                      </xsl:choose>
-                    </xsl:attribute>
-                    <xsl:value-of select="$lang/name"/>
-                  </a>
-                </th>
-                <xsl:for-each select="current-group()">
-                  <xsl:variable name="script" select="@script"/>
-                  <td>
-                    <xsl:value-of select="v"/>
-                  </td>
-                </xsl:for-each>
-              </tr>
-            </xsl:for-each-group>
-          </tbody>
-        </table>
-      </body>
-    </html>
-  </xsl:template>
-  <xsl:template match="plum">
-    <html>
-      <head>
-        <title>PLUM</title>
-        <meta charset='UTF-8'/>
-        <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-        <link href='https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css' rel='stylesheet'/>
-        <link href='https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css' rel='stylesheet'/>
-        <style>
-          td, th { text-align: right; font-family: monospace; }
-          .left { border-bottom: 0; }
-        </style>
-      </head>
-      <body>
+        <header>
+          <p>
+            <xsl:text>This is a curated list of programming languages with some metrics:</xsl:text>
+          </p>
+        </header>
         <xsl:apply-templates select="metrics" />
         <footer>
+          <p>
+            <xsl:text>If you want to add another language to the list, just submit a pull request to </xsl:text>
+            <a href="https://github.com/yegor256/plum">
+              <xsl:text>yegor256/plum</xsl:text>
+            </a>
+            <xsl:text>.</xsl:text>
+          </p>
           <p>
             <xsl:text>Built on </xsl:text>
             <xsl:value-of select="@date"/>
             <xsl:text> by </xsl:text>
-            <a href="https://github.com/yegor256/plum">
-              <xsl:text>yegor256/plum</xsl:text>
+            <a href="https://www.yegor256.com">
+              <xsl:text>@yegor256</xsl:text>
             </a>
           </p>
         </footer>

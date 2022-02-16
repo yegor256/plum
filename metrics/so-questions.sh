@@ -23,6 +23,11 @@
 
 lang=$1
 
+if [ ! "$lang" ]; then
+    echo "Number of Stack Overflow Questions"
+    exit
+fi
+
 tag=$(cat catalog.yml | yq ".${lang}.stackoverflow-tag")
 
 count=$(curl -s "https://api.stackexchange.com/2.2/tags/${tag}/info?site=stackoverflow" | gunzip | jq '.items[0].count')
