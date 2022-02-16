@@ -136,3 +136,25 @@ eiffel:
   github-lang: eiffel
   scholar-keyword: eiffel programming language
   wikipedia: https://www.eiffel.org
+
+php:
+  name: PHP
+  stackoverflow-tag: php
+  year-of-birth: 1995
+  latest-version: 8.1.2
+  recent-release-year: 2022
+  github-lang: php
+  scholar-keyword: php programming language
+  wikipedia: https://en.wikipedia.org/wiki/PHP
+
+go:
+  name: Go
+  stackoverflow-tag: go
+  year-of-birth: 1995
+  latest-version: 1.17.7
+  recent-release-year: 2022
+  github-lang: go
+  scholar-keyword: go programming language
+  home: https://go.dev
+  wikipedia: https://en.wikipedia.org/wiki/Go_(programming_language)
+
