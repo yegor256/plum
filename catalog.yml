@@ -158,3 +158,25 @@ go:
   home: https://go.dev
   wikipedia: https://en.wikipedia.org/wiki/Go_(programming_language)
 
+haskell:
+  name: Haskell
+  stackoverflow-tag: haskell
+  year-of-birth: 1990
+  latest-version: 2010
+  recent-release-year: 2020
+  github-lang: haskell
+  scholar-keyword: haskell programming language
+  home: https://www.haskell.org
+  wikipedia: https://en.wikipedia.org/wiki/Haskell_(programming_language)
+
+scala:
+  name: Scala
+  stackoverflow-tag: scala
+  year-of-birth: 2004
+  latest-version: 3.1.0
+  recent-release-year: 2021
+  github-lang: scala
+  scholar-keyword: scala programming language
+  home: https://www.scala-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Scala_(programming_language)
+
