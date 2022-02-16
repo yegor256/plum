@@ -238,3 +238,11 @@ kotlin:
   home: https://kotlinlang.org
   wikipedia: https://en.wikipedia.org/wiki/Kotlin_(programming_language)
 
+assembly:
+  name: Assembly
+  stackoverflow-tag: assembly
+  year-of-birth: 1949
+  github-lang: assembly
+  scholar-keyword: assembly programming language
+  wikipedia: https://en.wikipedia.org/wiki/Assembly_language
+

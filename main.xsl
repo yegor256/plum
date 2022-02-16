@@ -111,6 +111,12 @@ SOFTWARE.
               <xsl:text>yegor256/plum</xsl:text>
             </a>
             <xsl:text>.</xsl:text>
+            <br/>
+            <xsl:text>Here is </xsl:text>
+            <a href="index.xml">
+              <xsl:text>index.xml</xsl:text>
+            </a>
+            <xsl:text> with the data.</xsl:text>
           </p>
           <p>
             <xsl:text>Built on </xsl:text>

@@ -15,6 +15,7 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - run: mkdir gh-pages
       - run: cp target/index.html gh-pages
+      - run: cp target/index.xml gh-pages
       - uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
