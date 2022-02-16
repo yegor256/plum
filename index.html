@@ -6,19 +6,9 @@
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
       <link href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css" rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css" rel="stylesheet"><style>
-          td, th { text-align: right; font-family: monospace; }
-          .left { border-bottom: 0; }
-        </style></head>
-   <body>
-      <html>
-         <head>
-            <title>PLUM</title>
-            <meta charset="UTF-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-            <link href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css" rel="stylesheet">
-            <link href="https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css" rel="stylesheet"><style>
           td, th { text-align: right; font-family: monospace; font-size: 18px; }
           .left { border-bottom: 0; }
+          header { text-align: center; }
           footer { text-align: center; font-size: 0.8em; }
           .sorter { cursor: pointer; }
         </style><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script><script type="text/javascript">
@@ -26,59 +16,70 @@
             $("#languages").tablesorter();
           });
         </script></head>
-         <body>
-            <table id="languages">
-               <thead>
-                  <tr>
-                     <th></th>
-                     <th class="sorter">⇅ so-questions</th>
-                     <th class="sorter">⇅ github-pulls</th>
-                     <th class="sorter">⇅ github-repos</th>
-                     <th class="sorter">⇅ scholar-citations</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
-                     <th class="left"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></th>
-                     <td>1891025</td>
-                     <td>26370482</td>
-                     <td>8497952</td>
-                     <td>1630000</td>
-                  </tr>
-                  <tr>
-                     <th class="left"><a href="https://www.ruby-lang.org/">Ruby</a></th>
-                     <td>222864</td>
-                     <td>2403168</td>
-                     <td>292666</td>
-                     <td>1450000</td>
-                  </tr>
-                  <tr>
-                     <th class="left"><a href="https://en.wikipedia.org/wiki/C++">C++</a></th>
-                     <td>754699</td>
-                     <td>10170141</td>
-                     <td>2955296</td>
-                     <td>217000</td>
-                  </tr>
-                  <tr>
-                     <th class="left"><a href="https://www.rust-lang.org">Rust</a></th>
-                     <td>26573</td>
-                     <td>2403168</td>
-                     <td>292666</td>
-                     <td>1450000</td>
-                  </tr>
-                  <tr>
-                     <th class="left"><a href="https://www.java.com/">Java</a></th>
-                     <td>1827823</td>
-                     <td>23003720</td>
-                     <td>10495998</td>
-                     <td>3290000</td>
-                  </tr>
-               </tbody>
-            </table>
-         </body>
-      </html>
+   <body>
+      <header>
+         <p>This is a curated list of programming languages with some metrics:</p>
+      </header>
+      <table id="languages">
+         <thead>
+            <tr>
+               <th></th>
+               <th class="sorter">⇅ Number of Stack Overflow Questions
+                  
+               </th>
+               <th class="sorter">⇅ Number of GitHub Pull Requests
+                  
+               </th>
+               <th class="sorter">⇅ Number of GitHub Repositories
+                  
+               </th>
+               <th class="sorter">⇅ Number of Mentions in Google Scholar
+                  
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th class="left"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></th>
+               <td>1891038</td>
+               <td>26370978</td>
+               <td>8539968</td>
+               <td>1630000</td>
+            </tr>
+            <tr>
+               <th class="left"><a href="https://www.ruby-lang.org/">Ruby</a></th>
+               <td>222864</td>
+               <td>2403218</td>
+               <td>292665</td>
+               <td>1450000</td>
+            </tr>
+            <tr>
+               <th class="left"><a href="https://en.wikipedia.org/wiki/C++">C++</a></th>
+               <td>754699</td>
+               <td>10170202</td>
+               <td>2955311</td>
+               <td>217000</td>
+            </tr>
+            <tr>
+               <th class="left"><a href="https://www.rust-lang.org">Rust</a></th>
+               <td>26573</td>
+               <td>2403217</td>
+               <td>292665</td>
+               <td>1450000</td>
+            </tr>
+            <tr>
+               <th class="left"><a href="https://www.java.com/">Java</a></th>
+               <td>1827826</td>
+               <td>23003977</td>
+               <td>10736810</td>
+               <td>3290000</td>
+            </tr>
+         </tbody>
+      </table>
       <footer>
-         <p>Built on 2022-02-16 by <a href="https://github.com/yegor256/plum">yegor256/plum</a></p>
+         <p>If you want to add another language to the list, just submit a pull request to <a href="https://github.com/yegor256/plum">yegor256/plum</a>.
+         </p>
+         <p>Built on 2022-02-16 by <a href="https://www.yegor256.com">@yegor256</a></p>
       </footer>
    </body>
 </html>
