@@ -28,7 +28,7 @@ RUN apt-get install -y jq
 RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
     chmod a+x /usr/local/bin/yq
 
-RUN gem install yaml octokit gyoku jq
+RUN gem install yaml octokit gyoku
 
 RUN mkdir -p /usr/local/opt && \
     wget --no-verbose -O /usr/local/opt/Saxon.jar \
