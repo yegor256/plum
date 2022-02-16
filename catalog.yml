@@ -73,3 +73,25 @@ ruby:
   home: https://www.ruby-lang.org/
   wikipedia: https://en.wikipedia.org/wiki/Ruby_(programming_language)
 
+javascript:
+  name: JavaScript
+  stackoverflow-tag: javascript
+  year-of-birth: 1995
+  latest-version: 2021
+  recent-release-year: 2021
+  github-lang: javascript
+  scholar-keyword: javascript
+  home: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  wikipedia: https://en.wikipedia.org/wiki/JavaScript
+
+csharp:
+  name: C#
+  stackoverflow-tag: c#
+  year-of-birth: 2000
+  latest-version: 10.0
+  recent-release-year: 2021
+  github-lang: csharp
+  scholar-keyword: C# programming language
+  home: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  wikipedia: https://en.wikipedia.org/wiki/JavaScript
+
