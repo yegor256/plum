@@ -12,6 +12,7 @@ jobs:
       - uses: yegor256/plum@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - run: mkdir gh-pages
       - run: cp target/index.html gh-pages
       - uses: JamesIves/github-pages-deploy-action@4.1.4
