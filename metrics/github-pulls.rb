@@ -46,4 +46,4 @@ json = github.search_issues(
   page: 0
 )
 
-puts "<v>#{json[:total_count]}</v>"
+print "<v>#{json[:total_count]}</v>"

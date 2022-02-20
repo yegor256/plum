@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: wget -nv https://yegor256.github.io/plum/index.xml -O before.xml
       - uses: yegor256/plum@master
         env:
+          BEFORE: before.xml
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - run: mkdir gh-pages

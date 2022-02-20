@@ -21,8 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-set -x
-
 lang=$1
 
 if [ ! "$lang" ]; then
@@ -34,4 +32,4 @@ tag=$(cat catalog.yml | yq ".${lang}.stackoverflow-tag")
 
 count=$(curl -s "https://api.stackexchange.com/2.2/tags/$(printf ${tag} | jq -sRr @uri)/info?site=stackoverflow" | gunzip | jq '.items[0].count')
 
-echo "<v>${count}</v>"
+printf "<v>${count}</v>"

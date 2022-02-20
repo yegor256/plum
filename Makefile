@@ -26,7 +26,8 @@
 
 SHELL = bash
 TARGET = target
-SAXON="/usr/local/opt/Saxon.jar"
+BEFORE = $(TARGET)/index.xml
+SAXON = "/usr/local/opt/Saxon.jar"
 METRICS = $(notdir $(wildcard metrics/*))
 LANGS := $(shell cat catalog.yml | yq 'keys' | cut -f2 -d' ')
 XMLS = $(foreach lang,$(addprefix $(TARGET)/data/,$(LANGS)),$(foreach metric,$(METRICS),$(lang)/$(metric).xml))
@@ -63,13 +64,21 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	lang=$$(echo "$${path}" | cut -d/ -f1)
 	script="metrics/$$(echo "$${path}" | cut -d/ -f2 | sed 's/\.xml//')"
 	mkdir -p "$$(dirname "$@")"
+	id=$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')
+	before=$$(xmllint -xpath "//m[@lang='$${lang}' and @script='$${id}']/v/text()" $(BEFORE))
+	if [[ "$${before}" =~ ^[0-9]+$$ ]]; then
+		before="<v hint='Taken from cache'>$${before}</v>"
+	else
+		before="<v hint='$${before}'>n/a</v>"
+	fi
 	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
 	if [ "$(SERPAPI_KEY)" ]; then export SERPAPI_KEY=$(SERPAPI_KEY); fi
-	{
-		printf "<m lang='$${lang}' script='$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')'>"
-		"$${script}" "$${lang}"
-		printf "</m>"
-	} > $@
+	after=$$("$${script}" "$${lang}" 2>&1)
+	if [[ ! "$$(echo $${after} | xmllint -xpath '/v/text()' -)" =~ ^[0-9]+$$ ]]; then
+		echo "Broken output from $${script} for '$${lang}':\n$${after}"
+		after="$${before}"
+	fi
+	printf "<m lang='$${lang}' script='$${id}'>$${after}</m>" > $@
 	sleep 1
 
 $(TARGET):
