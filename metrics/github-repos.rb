@@ -30,7 +30,7 @@ lang = ARGV[0]
 token = ENV['GH_TOKEN']
 
 if lang.nil?
-    puts "GitHub Repositories"
+    puts "GitHub Repositories with 100+ Stars"
     exit
 end
 

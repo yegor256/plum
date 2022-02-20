@@ -1,4 +1,5 @@
-# MIT License
+#!/bin/bash
+# The MIT License (MIT)
 #
 # Copyright (c) 2022 Yegor Bugayenko
 #
@@ -9,29 +10,32 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM yegor256/rultor-image:1.6.0
+set -e
+set -x
 
-RUN apt-get update -y
-RUN apt-get install -y jq
-RUN apt-get install -y libxml2-utils
-RUN apt-get install -y tidy
+lang=$1
 
-RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
-    chmod a+x /usr/local/bin/yq
+if [ ! "$lang" ]; then
+    echo "Tweets"
+    exit
+fi
 
-RUN gem install yaml octokit gyoku twitter
+tag=$(cat catalog.yml | yq ".${lang}.twitter-tag")
+if [ "${tag}" == "null" ]; then
+    tag=$(cat catalog.yml | yq ".${lang}.stackoverflow-tag")
+fi
 
-RUN mkdir -p /usr/local/opt && \
-    wget --no-verbose -O /usr/local/opt/Saxon.jar \
-    https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-5/Saxon-HE-9.8.0-5.jar
+count=$(curl "https://api.twitter.com/2/tweets/counts/all?query=$(printf ${tag} | jq -sRr @uri)" -H "Authorization: Bearer ${TWITTER_TOKEN}" | jq '.count')
+
+printf "<v>${count}</v>"

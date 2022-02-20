@@ -228,6 +228,7 @@ vba:
   github-lang: vba
   scholar-keyword: vba programming language
   wikipedia: https://en.wikipedia.org/wiki/Visual_Basic_for_Applications
+  tiobe-name: Visual Basic
 
 kotlin:
   name: Kotlin
@@ -245,4 +246,21 @@ assembly:
   github-lang: assembly
   scholar-keyword: assembly programming language
   wikipedia: https://en.wikipedia.org/wiki/Assembly_language
+  tiobe-name: Assembly language
+
+prolog:
+  name: Prolog
+  stackoverflow-tag: prolog
+  year-of-birth: 1972
+  github-lang: prolog
+  scholar-keyword: prolog programming language
+  wikipedia: https://en.wikipedia.org/wiki/Prolog
+
+dart:
+  name: Dart
+  stackoverflow-tag: dart
+  year-of-birth: 2011
+  github-lang: dart
+  scholar-keyword: dart programming language
+  wikipedia: https://en.wikipedia.org/wiki/Dart_(programming_language)
 

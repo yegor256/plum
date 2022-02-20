@@ -75,6 +75,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 		before="<v hint='$$(echo $${before} | jq -Rr @html)'>n/a</v>"
 	fi
 	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
+	if [ "$(TWITTER_TOKEN)" ]; then export TWITTER_TOKEN=$(TWITTER_TOKEN); fi
 	if [ "$(SERPAPI_KEY)" ]; then export SERPAPI_KEY=$(SERPAPI_KEY); fi
 	after=$$("$${script}" "$${lang}" 2>&1)
 	if [[ ! "$$(echo $${after} | xmllint -xpath '/v/text()' -)" =~ ^[0-9]+$$ ]]; then

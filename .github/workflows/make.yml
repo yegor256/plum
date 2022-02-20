@@ -17,6 +17,7 @@ jobs:
         env:
           BEFORE: before.xml
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - run: mkdir gh-pages
       - run: cp target/index.html gh-pages

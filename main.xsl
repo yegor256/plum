@@ -88,6 +88,7 @@ SOFTWARE.
         <title>PLUM</title>
         <meta charset='UTF-8'/>
         <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+        <link rel="icon" href="https://raw.githubusercontent.com/yegor256/plum/logo-64.png" type="image/png"/>
         <link href='https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css' rel='stylesheet'/>
         <link href='https://cdn.jsdelivr.net/gh/yegor256/drops@gh-pages/drops.min.css' rel='stylesheet'/>
         <style>
