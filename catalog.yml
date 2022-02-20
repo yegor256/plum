@@ -312,6 +312,14 @@ squeak:
   github-lang: squeak
   scholar-keyword: squeak programming language
   wikipedia: https://en.wikipedia.org/wiki/Squeak
+  
+julia:
+  name: Julia
+  stackoverflow-tag: julia
+  year-of-birth: 2012
+  github-lang: julia
+  scholar-keyword: julia programming language
+  wikipedia: https://en.wikipedia.org/wiki/Julia_(programming_language)
 
 typescript:
   name: TypeScript
