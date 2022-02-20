@@ -329,3 +329,12 @@ typescript:
   scholar-keyword: typescript
   home: https://www.typescriptlang.org
   wikipedia: https://ru.wikipedia.org/wiki/TypeScript
+
+lisp:
+  name: Lisp
+  stackoverflow-tag: lisp
+  year-of-birth: 1958
+  github-lang: lisp
+  scholar-keyword: lisp
+  wikipedia: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+  
