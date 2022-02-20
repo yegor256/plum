@@ -264,3 +264,52 @@ dart:
   scholar-keyword: dart programming language
   wikipedia: https://en.wikipedia.org/wiki/Dart_(programming_language)
 
+algol:
+  name: ALGOL
+  stackoverflow-tag: algol
+  year-of-birth: 1958
+  github-lang: algol
+  scholar-keyword: algol programming language
+  wikipedia: https://en.wikipedia.org/wiki/ALGOL
+
+simula:
+  name: Simula
+  stackoverflow-tag: simula
+  year-of-birth: 1962
+  github-lang: simula
+  scholar-keyword: simula programming language
+  wikipedia: https://en.wikipedia.org/wiki/Simula
+
+pascal:
+  name: Pascal
+  stackoverflow-tag: pascal
+  year-of-birth: 1970
+  github-lang: pascal
+  scholar-keyword: pascal programming language
+  wikipedia: https://en.wikipedia.org/wiki/Pascal_(programming_language)
+
+self:
+  name: Self
+  stackoverflow-tag: self
+  year-of-birth: 1987
+  github-lang: self
+  scholar-keyword: self programming language
+  home: https://selflanguage.org
+  wikipedia: https://en.wikipedia.org/wiki/Self_(programming_language)
+
+smalltalk:
+  name: Smalltalk
+  stackoverflow-tag: smalltalk
+  year-of-birth: 1972
+  github-lang: smalltalk
+  scholar-keyword: smalltalk programming language
+  wikipedia: https://en.wikipedia.org/wiki/Smalltalk
+
+squeak:
+  name: Squeak
+  stackoverflow-tag: squeak
+  year-of-birth: 1996
+  github-lang: squeak
+  scholar-keyword: squeak programming language
+  wikipedia: https://en.wikipedia.org/wiki/Squeak
+

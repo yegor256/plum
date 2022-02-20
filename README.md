@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/yegor256/plum/logo.svg" height="64px"/>
+<img src="https://raw.githubusercontent.com/yegor256/plum/master/logo.svg" height="64px"/>
 
 [![make](https://github.com/yegor256/plum/actions/workflows/make.yml/badge.svg?branch=master)](https://github.com/yegor256/plum/actions/workflows/make.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ctors-vs-size/blob/master/LICENSE.txt)
