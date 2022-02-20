@@ -320,3 +320,12 @@ julia:
   github-lang: julia
   scholar-keyword: julia programming language
   wikipedia: https://en.wikipedia.org/wiki/Julia_(programming_language)
+
+typescript:
+  name: TypeScript
+  stackoverflow-tag: typescript
+  year-of-birth: 2012
+  github-lang: typescript
+  scholar-keyword: typescript
+  home: https://www.typescriptlang.org
+  wikipedia: https://ru.wikipedia.org/wiki/TypeScript
