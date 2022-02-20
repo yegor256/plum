@@ -41,6 +41,7 @@ github = Octokit::Client.new(access_token: token) unless token.nil?
 json = github.search_repositories(
   [
     "language:#{cat['github-lang']}",
+    "stars:>=100"
   ].join(' '),
   per_page: 1,
   page: 0
