@@ -38,8 +38,8 @@ fi
 temp=$(dirname $0)/../target
 mkdir -p "${temp}"
 if [ ! -e "${temp}/tiobe.xml" ]; then
-    wget -nv https://www.tiobe.com/tiobe-index/ -O "${temp}/tiobe.html"
-    tidy -bare -asxml -q -o "${temp}/tiobe.xml" "${temp}/tiobe.html" || echo 'Ignore all errors'
+    wget -nv https://www.tiobe.com/tiobe-index/ -O "${temp}/tiobe.html" >/dev/null 2>&1
+    tidy -bare -asxml -q -o "${temp}/tiobe.xml" "${temp}/tiobe.html" >/dev/null 2>&1 || true
 fi
 
 rank=$(sed '2 s/xmlns=".*"//g' "${temp}/tiobe.xml" | xmllint -xpath "//tr[td='${name}' and td[contains(text(),'%')]]/td[1]/text()" - 2>&1)
