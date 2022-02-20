@@ -66,6 +66,11 @@ SOFTWARE.
             <xsl:for-each select="current-group()">
               <xsl:variable name="script" select="@script"/>
               <td>
+                <xsl:if test="@hint">
+                  <xsl:attribute name="title">
+                    <xsl:value-of select="@hint"/>
+                  </xsl:attribute>
+                </xsl:if>
                 <xsl:value-of select="v"/>
               </td>
             </xsl:for-each>
