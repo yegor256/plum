@@ -1,4 +1,5 @@
-# MIT License
+#!/bin/bash
+# The MIT License (MIT)
 #
 # Copyright (c) 2022 Yegor Bugayenko
 #
@@ -9,29 +10,39 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM yegor256/rultor-image:1.6.0
+set -x
+set -e
 
-RUN apt-get update -y
-RUN apt-get install -y jq
-RUN apt-get install -y libxml2-utils
-RUN apt-get install -y tidy
+lang=$1
 
-RUN sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
-    chmod a+x /usr/local/bin/yq
+if [ ! "$lang" ]; then
+    echo "TIOBE Index"
+    exit
+fi
 
-RUN gem install yaml octokit gyoku
+name=$(cat catalog.yml | yq ".${lang}.tiobe-name")
+if [ "${name}" == "null" ]; then
+    name=$(cat catalog.yml | yq ".${lang}.name")
+fi
 
-RUN mkdir -p /usr/local/opt && \
-    wget --no-verbose -O /usr/local/opt/Saxon.jar \
-    https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-5/Saxon-HE-9.8.0-5.jar
+temp=$(dirname $0)/../target
+mkdir -p "${temp}"
+if [ ! -e "${temp}/tiobe.xml" ]; then
+    wget -nv https://www.tiobe.com/tiobe-index/ -O "${temp}/tiobe.html"
+    tidy -bare -asxml -q -o "${temp}/tiobe.xml" "${temp}/tiobe.html"
+fi
+
+rank=$(sed '2 s/xmlns=".*"//g' "${temp}/tiobe.xml" | xmllint -xpath "//tr[td='${name}' and td[contains(text(),'%')]]/td[1]/text()" - 2>&1)
+
+printf "<v>${rank}</v>"
