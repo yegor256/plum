@@ -26,7 +26,6 @@
 
 SHELL = bash
 TARGET = target
-BEFORE = $(TARGET)/index.xml
 SAXON = "/usr/local/opt/Saxon.jar"
 METRICS = $(notdir $(wildcard metrics/*))
 LANGS := $(shell cat catalog.yml | yq 'keys' | cut -f2 -d' ')
@@ -65,7 +64,11 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	script="metrics/$$(echo "$${path}" | cut -d/ -f2 | sed 's/\.xml//')"
 	mkdir -p "$$(dirname "$@")"
 	id=$$(echo "$${path}" | cut -d/ -f2 | sed 's/\..*//')
-	before=$$(xmllint -xpath "//m[@lang='$${lang}' and @script='$${id}']/v/text()" $(BEFORE))
+	if [ "$(BEFORE)" ]; then
+		before=$$(xmllint -xpath "//m[@lang='$${lang}' and @script='$${id}']/v/text()" $(BEFORE))
+	else
+		before=""
+	fi
 	if [[ "$${before}" =~ ^[0-9]+$$ ]]; then
 		before="<v hint='Taken from cache'>$${before}</v>"
 	else
