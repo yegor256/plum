@@ -319,6 +319,7 @@ julia:
   year-of-birth: 2012
   github-lang: julia
   scholar-keyword: julia programming language
+  home: https://julialang.org
   wikipedia: https://en.wikipedia.org/wiki/Julia_(programming_language)
 
 typescript:
