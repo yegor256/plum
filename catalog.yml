@@ -312,3 +312,12 @@ squeak:
   github-lang: squeak
   scholar-keyword: squeak programming language
   wikipedia: https://en.wikipedia.org/wiki/Squeak
+
+typescript:
+  name: TypeScript
+  stackoverflow-tag: typescript
+  year-of-birth: 2012
+  github-lang: typescript
+  scholar-keyword: typescript
+  home: https://www.typescriptlang.org
+  wikipedia: https://ru.wikipedia.org/wiki/TypeScript
