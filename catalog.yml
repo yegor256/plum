@@ -58,8 +58,8 @@ ruby:
   name: Ruby
   stackoverflow-tag: ruby
   year-of-birth: 1995
-  github-lang: rust
-  scholar-keyword: rust programming language
+  github-lang: ruby
+  scholar-keyword: ruby programming language
   home: https://www.ruby-lang.org/
   wikipedia: https://en.wikipedia.org/wiki/Ruby_(programming_language)
 
