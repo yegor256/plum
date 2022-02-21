@@ -34,6 +34,9 @@ XMLS = $(foreach lang,$(addprefix $(TARGET)/data/,$(LANGS)),$(foreach metric,$(M
 all: $(TARGET)/index.html
 	echo "Languages: $(LANGS)"
 
+lint:
+	yamllint catalog.yml
+
 $(TARGET)/index.html: $(TARGET)/index.xml main.xsl
 	java -jar $(SAXON) "-s:$(TARGET)/index.xml" -xsl:main.xsl "-o:$(TARGET)/index.html"
 
@@ -77,7 +80,11 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
 	if [ "$(TWITTER_TOKEN)" ]; then export TWITTER_TOKEN=$(TWITTER_TOKEN); fi
 	if [ "$(SERPAPI_KEY)" ]; then export SERPAPI_KEY=$(SERPAPI_KEY); fi
-	after=$$("$${script}" "$${lang}" 2>&1)
+	if [ "$(DRY)" ]; then
+		after=42
+	else
+		after=$$("$${script}" "$${lang}" 2>&1)
+	fi
 	if [[ ! "$$(echo $${after} | xmllint -xpath '/v/text()' -)" =~ ^[0-9]+$$ ]]; then
 		echo "Broken output from $${script} for '$${lang}':\n$${after}"
 		after="$${before}"
