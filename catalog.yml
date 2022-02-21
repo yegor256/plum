@@ -319,6 +319,7 @@ julia:
   year-of-birth: 2012
   github-lang: julia
   scholar-keyword: julia programming language
+  home: https://julialang.org
   wikipedia: https://en.wikipedia.org/wiki/Julia_(programming_language)
 
 typescript:
@@ -329,3 +330,12 @@ typescript:
   scholar-keyword: typescript
   home: https://www.typescriptlang.org
   wikipedia: https://ru.wikipedia.org/wiki/TypeScript
+
+lisp:
+  name: Lisp
+  stackoverflow-tag: lisp
+  year-of-birth: 1958
+  github-lang: lisp
+  scholar-keyword: lisp programming language
+  wikipedia: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+  
