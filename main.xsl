@@ -35,7 +35,6 @@ SOFTWARE.
           <xsl:for-each-group select="$root/m" group-by="@script">
             <xsl:variable name="script" select="@script"/>
             <th class="sorter">
-              <xsl:text>⇅ </xsl:text>
               <xsl:value-of select="/plum/scripts/script[@id=$script]"/>
             </th>
           </xsl:for-each-group>
@@ -116,7 +115,9 @@ SOFTWARE.
       <body>
         <header>
           <p>
-            <xsl:text>This is a curated list of programming languages with some metrics:</xsl:text>
+            <xsl:text>This is a curated list of </xsl:text>
+            <xsl:value-of select="count(catalog/node())"/>
+            <xsl:text> programming languages with some metrics:</xsl:text>
           </p>
         </header>
         <xsl:apply-templates select="metrics" />

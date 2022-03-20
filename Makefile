@@ -28,7 +28,7 @@ SHELL = bash
 TARGET = target
 SAXON = "/usr/local/opt/Saxon.jar"
 METRICS = $(notdir $(wildcard metrics/*))
-LANGS := $(shell cat catalog.yml | yq 'keys' | cut -f2 -d' ')
+LANGS := $(shell shuf -e -- $(shell cat catalog.yml | yq 'keys' | cut -f2 -d' '))
 XMLS = $(foreach lang,$(addprefix $(TARGET)/data/,$(LANGS)),$(foreach metric,$(METRICS),$(lang)/$(metric).xml))
 
 all: $(TARGET)/index.html
