@@ -15,8 +15,8 @@ jobs:
         with:
           toolchain: stable
       - run: |
-          export PATH=$PATH:$HOME/.cargo/bin
           cargo install xsv
+          ln -s $HOME/.cargo/bin/xsv /usr/local/bin/xsv
           xsv --version
       - uses: actions/checkout@v2
       - run: wget -nv https://yegor256.github.io/plum/index.xml -O before.xml
