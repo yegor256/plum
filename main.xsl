@@ -75,12 +75,19 @@ SOFTWARE.
     </table>
   </xsl:template>
   <xsl:template match="v">
-    <xsl:if test="@hint">
-      <xsl:attribute name="title">
-        <xsl:value-of select="@hint"/>
-      </xsl:attribute>
-    </xsl:if>
-    <xsl:value-of select="text()"/>
+    <span>
+      <xsl:if test="@hint">
+        <xsl:attribute name="title">
+          <xsl:value-of select="@hint"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@empty">
+        <xsl:attribute name="class">
+          <xsl:value-of select="gray"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:value-of select="text()"/>
+    </span>
   </xsl:template>
   <xsl:template match="plum">
     <html>

@@ -75,7 +75,7 @@ $(TARGET)/index.xml: $(XMLS) Makefile
 	if [[ "$${before}" =~ ^[0-9]+$$ ]]; then
 		before="<v hint='Taken from cache'>$${before}</v>"
 	else
-		before="<v hint='$$(echo $${before} | jq -Rr @html)'>n/a</v>"
+		before="<v hint='$$(echo $${before} | jq -Rr @html)' empty=''>n/a</v>"
 	fi
 	if [ "$(GH_TOKEN)" ]; then export GH_TOKEN=$(GH_TOKEN); fi
 	if [ "$(TWITTER_TOKEN)" ]; then export TWITTER_TOKEN=$(TWITTER_TOKEN); fi

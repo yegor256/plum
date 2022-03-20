@@ -269,7 +269,7 @@ algol:
   stackoverflow-tag: algol
   year-of-birth: 1958
   github-lang: algol
-  scholar-keyword: algol programming language
+  scholar-keyword: algol
   wikipedia: https://en.wikipedia.org/wiki/ALGOL
 
 simula:
@@ -302,7 +302,7 @@ smalltalk:
   stackoverflow-tag: smalltalk
   year-of-birth: 1972
   github-lang: smalltalk
-  scholar-keyword: smalltalk programming language
+  scholar-keyword: smalltalk
   wikipedia: https://en.wikipedia.org/wiki/Smalltalk
 
 squeak:
@@ -312,7 +312,7 @@ squeak:
   github-lang: squeak
   scholar-keyword: squeak programming language
   wikipedia: https://en.wikipedia.org/wiki/Squeak
-  
+
 julia:
   name: Julia
   stackoverflow-tag: julia
@@ -338,4 +338,12 @@ lisp:
   github-lang: lisp
   scholar-keyword: lisp programming language
   wikipedia: https://en.wikipedia.org/wiki/Lisp_(programming_language)
-  
+
+erlang:
+  name: Erlang
+  stackoverflow-tag: erlang
+  year-of-birth: 1986
+  github-lang: erlang
+  scholar-keyword: erlang
+  home: https://www.erlang.org
+  wikipedia: https://en.wikipedia.org/wiki/Erlang_(programming_language)
