@@ -347,3 +347,84 @@ erlang:
   scholar-keyword: erlang
   home: https://www.erlang.org
   wikipedia: https://en.wikipedia.org/wiki/Erlang_(programming_language)
+
+clojure:
+  name: Clojure
+  stackoverflow-tag: clojure
+  year-of-birth: 2007
+  github-lang: clojure
+  scholar-keyword: clojure programming language
+  home: https://www.clojure.org
+  wikipedia: https://en.wikipedia.org/wiki/Clojure
+
+ceylon:
+  name: Ceylon
+  stackoverflow-tag: ceylon
+  year-of-birth: 2011
+  github-lang: ceylon
+  scholar-keyword: ceylon programming language
+  home: https://www.ceylon-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Ceylon_(programming_language)
+
+haxe:
+  name: Haxe
+  stackoverflow-tag: haxe
+  year-of-birth: 2006
+  github-lang: haxe
+  scholar-keyword: haxe programming language
+  home: https://www.haxe.org
+  wikipedia: https://en.wikipedia.org/wiki/Haxe
+
+modula-3:
+  name: Modula-3
+  stackoverflow-tag: modula-2
+  year-of-birth: 1988
+  github-lang: modula-3
+  scholar-keyword: modula-3 programming language
+  home: https://www.modula3.org
+  wikipedia: https://en.wikipedia.org/wiki/Modula-3
+
+oberon:
+  name: Oberon
+  stackoverflow-tag: oberon
+  year-of-birth: 1987
+  github-lang: oberon
+  scholar-keyword: oberon programming language
+  home: https://www.projectoberon.com
+  wikipedia: https://en.wikipedia.org/wiki/Oberon_(programming_language)
+
+racket:
+  name: Racket
+  stackoverflow-tag: racket
+  year-of-birth: 1994
+  github-lang: racket
+  scholar-keyword: racket programming language
+  home: https://www.racket-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Racket_(programming_language)
+
+tex:
+  name: TeX
+  stackoverflow-tag: latex
+  year-of-birth: 1978
+  github-lang: latex
+  scholar-keyword: latex programming language
+  home: https://www.tug.org
+  wikipedia: https://en.wikipedia.org/wiki/TeX
+
+tcl:
+  name: Tcl
+  stackoverflow-tag: tcl
+  year-of-birth: 1988
+  github-lang: tcl
+  scholar-keyword: tcl programming language
+  home: https://www.tcl-lang.org
+  wikipedia: https://en.wikipedia.org/wiki/Tcl
+
+xslt:
+  name: XSLT
+  stackoverflow-tag: xslt
+  year-of-birth: 1998
+  github-lang: xslt
+  scholar-keyword: xslt programming language
+  wikipedia: https://en.wikipedia.org/wiki/XSLT
+
