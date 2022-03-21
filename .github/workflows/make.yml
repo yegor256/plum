@@ -14,10 +14,6 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run: |
-          cargo install xsv
-          sudo ln -s $HOME/.cargo/bin/xsv /usr/bin/xsv
-          xsv --version
       - uses: actions/checkout@v2
       - run: wget -nv https://yegor256.github.io/plum/index.xml -O before.xml
       - uses: yegor256/plum@master
