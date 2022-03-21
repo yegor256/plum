@@ -82,7 +82,7 @@ SOFTWARE.
       </xsl:if>
       <xsl:if test="@empty">
         <xsl:attribute name="class">
-          <xsl:value-of select="gray"/>
+          <xsl:text>gray</xsl:text>
         </xsl:attribute>
       </xsl:if>
       <xsl:value-of select="text()"/>
