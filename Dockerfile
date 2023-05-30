@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM yegor256/rultor-image:1.13.0
+FROM yegor256/rultor-image:1.20.0
 
 RUN apt-get update -y
 RUN apt-get install -y jq
